@@ -18,23 +18,53 @@ def draw_carbon(t):
 
     # Below we are simply calling draw_letter to draw the letters C and H
     # You will need to modify this function to draw the CH₂ group correctly.
+    t.up()
     draw_letter(t, 'C')
+    t.right(90)
+    t.forward(15)
+    t.down()
+    t.forward(30)
+    t.up()
+    t.forward(15)
     draw_letter(t, 'H')
+    t.up()
+    t.left(180)
+    t.forward(75)
+    t.down()
+    t.forward(30)
+    t.up()
+    t.forward(15)
     draw_letter(t, 'H')
     
 
 # Exercise 2
 def draw_carbons(t, num_carbons):
     """Draws a straight line of CH₂ groups (without extra Hs at ends)"""
-    # pass simply does nothing, you will need to replace it with your code.
-    pass
+    for i in range(num_carbons):
+        draw_carbon(t)
+        t.up()
+        t.right(180)
+        t.forward(60)
+        t.left(90)
+        t.forward(15)
+        t.down()
+        t.forward(30)
+        t.up()
+        t.forward(15)
 
 
 # Exercise 3
 def draw_carbon_chain(t, num_carbons):
     """Draws full CH₃–(CH₂)_n–CH₃ style carbon chain"""    
-    # pass simply does nothing, you will need to replace it with your code.
-    pass
+    t.up()
+    draw_letter(t, 'C')
+    t.forward(15)
+    t.down()
+    t.forward(30)
+    t.up()
+    t.forward(15)
+    draw_carbons(t, num_carbons)
+    draw_letter(t, 'C')
     
 
 ######
